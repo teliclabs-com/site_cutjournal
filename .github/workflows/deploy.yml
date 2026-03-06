@@ -1,0 +1,48 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main
+
+# Only allow one deployment at a time, cancel any in-flight
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+# Minimal OIDC token permissions — no write access to repo
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::498228254634:role/github-deploy-cutjournalai-com
+          aws-region: us-east-1
+
+      - name: Deploy to S3
+        run: aws s3 sync public/ s3://cutjournalai.com --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id EFC0MJIGR45C2 \
+            --paths "/*"
