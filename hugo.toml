@@ -1,0 +1,22 @@
+baseURL = "https://cutjournal.com/"
+languageCode = "en-us"
+title = "CutJournal AI - Track Your Physique Transformation with AI"
+
+[params]
+  description = "CutJournal AI is an iOS body composition tracking app with AI-powered body fat estimation from progress photos. Track weight, body fat, and physique changes smarter."
+  tagline = "Track Your Physique Transformation with AI"
+  keywords = "weight tracker app, body fat tracker, AI body composition, body fat estimation app, weight loss tracker iOS, body composition tracker, progress photo tracker"
+  author = "Christopher Townsend"
+  company = "Telic Labs"
+  contactEmail = "hello@teliclabs.com"
+  appStoreURL = "#" # Replace with actual App Store URL
+  ogImage = "/images/og-image.png"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
