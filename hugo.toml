@@ -16,6 +16,10 @@ title = "CutJournal AI - Track Your Physique Transformation with AI"
   changefreq = "weekly"
   priority = 0.5
 
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

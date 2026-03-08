@@ -11,7 +11,10 @@
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:site_name" content="CutJournal AI">
+<meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -22,11 +25,50 @@
 <!-- Canonical URL -->
 <link rel="canonical" href="{{ .Permalink }}">
 
-<!-- Favicon placeholder -->
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 
 <!-- Stylesheet -->
 <link rel="stylesheet" href="/css/style.css">
+
+<!-- Structured Data: Organization (all pages) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .Site.Params.company }}",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ .Site.Params.ogImage | absURL }}",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "{{ .Site.Params.contactEmail }}",
+    "contactType": "customer support"
+  }
+}
+</script>
+
+<!-- Structured Data: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL }}"
+    }{{ if not .IsHome }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }{{ end }}
+  ]
+}
+</script>
 
 {{ if .IsHome }}
 <!-- Structured Data: SoftwareApplication -->
@@ -44,6 +86,24 @@
     "priceCurrency": "USD"
   },
   "author": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.company }}",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{ end }}
+
+{{ if not .IsHome }}
+<!-- Structured Data: WebPage for content pages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ .Title }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+  "publisher": {
     "@type": "Organization",
     "name": "{{ .Site.Params.company }}",
     "url": "{{ .Site.BaseURL }}"
