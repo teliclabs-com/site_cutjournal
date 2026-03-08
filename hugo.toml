@@ -9,7 +9,7 @@ title = "CutJournal AI - Track Your Physique Transformation with AI"
   author = "Christopher Townsend"
   company = "Telic Labs"
   contactEmail = "hello@teliclabs.com"
-  appStoreURL = "#" # Replace with actual App Store URL
+  appStoreURL = "https://apps.apple.com/app/id6759877072"
   ogImage = "/images/og-image.png"
 
 [sitemap]

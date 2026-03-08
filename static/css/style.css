@@ -332,7 +332,7 @@ section h2 {
 
 .screenshots-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   max-width: 900px;
   margin: 0 auto;
