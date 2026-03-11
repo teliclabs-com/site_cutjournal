@@ -63,6 +63,6 @@ These Terms shall be governed by and construed in accordance with the laws of th
 
 If you have questions about these Terms, please contact us at:
 
-**Email:** [hello@teliclabs.com](mailto:hello@teliclabs.com)
+**Email:** {{< email user="hello" domain="teliclabs.com" >}}
 
 **Developer:** Telic Labs / Christopher Townsend

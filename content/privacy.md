@@ -76,6 +76,6 @@ We may update this Privacy Policy from time to time. Any changes will be reflect
 
 If you have questions or concerns about this Privacy Policy, please contact us at:
 
-**Email:** [hello@teliclabs.com](mailto:hello@teliclabs.com)
+**Email:** {{< email user="hello" domain="teliclabs.com" >}}
 
 **Developer:** Telic Labs / Christopher Townsend
