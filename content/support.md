@@ -12,7 +12,7 @@ We're here to help you get the most out of CutJournal AI.
 
 For questions, feedback, or support requests, reach out to us at:
 
-**Email:** [hello@teliclabs.com](mailto:hello@teliclabs.com)
+**Email:** {{< email user="hello" domain="teliclabs.com" >}}
 
 We typically respond within 24-48 hours.
 
@@ -38,7 +38,7 @@ Yes, CutJournal AI supports data export. Check the Settings section within the a
 
 ## Report a Bug
 
-Found a bug? Please email us at [hello@teliclabs.com](mailto:hello@teliclabs.com) with:
+Found a bug? Please email us at {{< email user="hello" domain="teliclabs.com" >}} with:
 - A description of the issue
 - Steps to reproduce it
 - Your device model and iOS version

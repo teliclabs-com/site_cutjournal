@@ -1,0 +1,15 @@
+{{- $id := printf "email-%d" .Ordinal -}}
+{{- $user := .Get "user" -}}
+{{- $domain := .Get "domain" -}}
+{{- $encoded := printf "%s@%s" $user $domain | base64Encode -}}
+
+<span id="{{ $id }}">
+  <noscript>{{ $user }} [at] {{ $domain | replaceRE `\.` " [dot] " }}</noscript>
+</span>
+<script>
+(function(){
+  var e = atob("{{ $encoded }}");
+  var el = document.getElementById("{{ $id }}");
+  el.innerHTML = '<a href="mailto:' + e + '">' + e + '</a>';
+})();
+</script>
