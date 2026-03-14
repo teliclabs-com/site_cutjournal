@@ -6,7 +6,7 @@ layout: "single"
 
 # Privacy Policy
 
-**Last updated: March 8, 2026**
+**Last updated: March 14, 2026**
 
 CutJournal AI ("we", "our", or "us") is developed by Telic Labs (Christopher Townsend). This Privacy Policy explains how information is handled when you use the CutJournal AI iOS application ("the App"). This policy applies to all users of the App and is intended to satisfy the requirements of the Apple App Store.
 
@@ -24,9 +24,14 @@ All data you create within the App — including body measurements, weight entri
 
 ## What We Store on Our Servers
 
-The **only** data we store is a unique, anonymous device identifier provided by Apple (known as an `identifierForVendor`). This identifier:
+The **only** data we store is:
 
-- Is used **solely** to limit API usage and manage service costs
+- A unique, anonymous device identifier provided by Apple (known as an `identifierForVendor`)
+- Credits purchased and credits used
+
+This data:
+
+- Is used **solely** to manage access to the API and service costs
 - Is **not** linked to your name, email, Apple ID, or any personal information
 - **Cannot** be used to identify you personally
 - Is automatically removed if you uninstall the App and do not reinstall within Apple's reset window
@@ -45,12 +50,12 @@ We do **not** use any analytics frameworks, advertising SDKs, or tracking techno
 
 ## Third-Party Services
 
-The App does not communicate with any third-party services. We do not sell, trade, or share any information with third parties for marketing or advertising purposes.
+When you request an AI estimate, your photos are processed by our trusted third-party services (AWS for API hosting, Anthropic for AI modeling) solely to generate your estimate and are not stored or used for any other purpose. We do not sell, trade, or share any information with third parties for marketing or advertising purposes.
 
 ## Data Retention
 
 - **On-device data:** Retained until you delete it within the App or uninstall the App.
-- **Device identifier:** Retained on our server only as long as needed for API usage management. No other data is retained.
+- **Device identifier, credits purchased, and credits used:** Retained on our server only as long as needed for API access management. No other data is retained.
 
 ## Your Rights and Choices
 
@@ -58,7 +63,7 @@ You have full control over your data:
 
 - **Delete all App data** at any time by uninstalling the App from your device
 - **Revoke Apple Health permissions** through iOS Settings at any time
-- **Contact us** to request deletion of your device identifier from our server
+- **Contact us** to request deletion of your device identifier and credit data from our server
 
 ## Children's Privacy
 
@@ -66,7 +71,7 @@ CutJournal AI is not directed at children under the age of 13. We do not knowing
 
 ## International Users
 
-The anonymous device identifier may be processed on servers located in the United States. Since this identifier cannot be linked to any individual, no personal data is transferred internationally.
+The anonymous device identifier and credit data may be processed on servers located in the United States. Since this data cannot be linked to any individual, no personal data is transferred internationally.
 
 ## Changes to This Policy
 
