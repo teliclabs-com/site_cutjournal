@@ -1,6 +1,6 @@
 # CutJournal AI - Marketing Site
 
-Marketing and support site for [CutJournal AI](https://cutjournal.com), an iOS body composition tracking app with AI-powered body fat estimation from progress photos.
+Marketing and support site for [CutJournal AI](https://cutjournalai.com), an iOS body composition tracking app with AI-powered body fat estimation from progress photos.
 
 Built with [Hugo](https://gohugo.io/).
 
