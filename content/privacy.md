@@ -6,43 +6,50 @@ layout: "single"
 
 # Privacy Policy
 
-**Last updated: March 14, 2026**
+**Last updated: March 15, 2026**
 
 CutJournal AI ("we", "our", or "us") is developed by Telic Labs (Christopher Townsend). This Privacy Policy explains how information is handled when you use the CutJournal AI iOS application ("the App"). This policy applies to all users of the App and is intended to satisfy the requirements of the Apple App Store.
 
-## Summary
+## AI Body Fat Estimate Feature
 
-CutJournal AI is designed with privacy at its core. **We do not collect, store, or have access to any of your personal data, photos, health information, or measurements.** Everything you enter into the App stays on your device.
+### Overview
 
-## Data Stored on Your Device
+CutJournal AI includes an optional AI-powered body fat estimation feature. When you choose to use this feature, certain data is transmitted securely for real-time analysis. This section explains exactly what data is involved, how it is processed, and what protections are in place.
 
-All data you create within the App — including body measurements, weight entries, goals, notes, and progress photos — is stored **locally on your device only**. This data is never saved by our servers at any time. It is used to calculate body fat % and then discarded immediately.
+### Data Collected
 
-## Photos
+| Data Type | What Is Sent | Purpose | Retention |
+|-----------|-------------|---------|-----------|
+| Progress Photos | Front and side photos you capture | Visual analysis for body fat estimation | Immediately discarded after processing |
+| Body Measurements | Waist, neck, hip, and other measurements you enter | Used alongside photos to improve estimate accuracy | Immediately discarded after processing |
+| Profile Information | Height, weight, age, and sex | Provides context for accurate body composition analysis | Immediately discarded after processing |
+| Device Identifier | Anonymous `identifierForVendor` | Manages API access and credit usage | Retained on server for access management only |
 
-**Your photos are never stored, or retained on our servers.** When you use the AI body fat estimation feature, the photo is sent to our AI body fat estimation service for analysis. Our model uses an Anthropic AI image analysis model hosted on our web hosting account to estimate body fat percentage. The photo is processed in real time and is **immediately discarded** — it is not saved, cached, or stored on any server at any time. We have no ability to view, retrieve, or access your photos.
+### How Your Data Is Processed
 
-## What We Store on Our Servers
+- All data is transmitted over **TLS-encrypted connections**
+- Processing occurs entirely within our **AWS infrastructure**
+- The AI model (Anthropic's Claude) is accessed via **AWS Bedrock** — your data remains within AWS and is **not sent to Anthropic directly**
+- No third party outside of AWS has access to your data during processing
 
-The **only** data we store is:
+### Data Retention
 
-- A unique, anonymous device identifier provided by Apple (known as an `identifierForVendor`)
-- Credits purchased and credits used
+- Photos, measurements, and profile data are processed in **real time** and **immediately discarded** — they are never written to disk, cached, or stored on any server
+- The only data retained on our servers is your **anonymous device identifier** and **credit balance**, used solely for API access management
 
-This data:
+### Service Providers
 
-- Is used **solely** to manage access to the API and service costs
-- Is **not** linked to your name, email, Apple ID, or any personal information
-- **Cannot** be used to identify you personally
-- Is automatically removed if you uninstall the App and do not reinstall within Apple's reset window
+**Amazon Web Services (AWS)** is the sole third-party service provider involved in processing AI estimates. AWS acts as a data processor under our direction. The Anthropic Claude AI model is accessed through AWS Bedrock, meaning your data stays within the AWS environment and is not transmitted to Anthropic separately.
 
-We do not store any other data on our servers.
+### Third-Party AI Disclosure (Apple Guideline 5.1.2(i))
 
-## Apple Health Integration
+This feature uses a customized **Anthropic Claude** model, a third-party AI model, to analyze your photos and measurements for body fat estimation. The model is accessed through **AWS Bedrock**, and your data is processed within AWS infrastructure. Anthropic does not directly receive, store, or have access to your data. No data is used to train AI models.
 
-With your explicit permission, CutJournal AI can read and write data to Apple Health (such as weight and body fat percentage). This integration is managed entirely by iOS. Health data accessed through this integration remains on your device and is governed by Apple's privacy policies. **We do not have access to your Apple Health data.**
+### Your Consent and Control
 
-You can grant or revoke Apple Health permissions at any time through **Settings > Health > Data Access & Devices** on your device.
+- The AI body fat estimation feature is **entirely optional** — the App functions fully without it
+- You must provide **explicit consent** before any data is sent for AI analysis
+- You can choose not to use the feature at any time with no impact on other App functionality
 
 ## Analytics and Tracking
 
@@ -50,7 +57,7 @@ We do **not** use any analytics frameworks, advertising SDKs, or tracking techno
 
 ## Third-Party Services
 
-When you request an AI estimate, your photos are processed by our trusted third-party services (AWS for API hosting, Anthropic for AI modeling) solely to generate your estimate and are not stored or used for any other purpose. We do not sell, trade, or share any information with third parties for marketing or advertising purposes.
+When you request an AI estimate, your photos are processed within our AWS infrastructure. The AI model (Anthropic's Claude) is accessed through AWS Bedrock — Anthropic does not directly receive your data. Your photos are used solely to generate your estimate and are not stored or used for any other purpose. We do not sell, trade, or share any information with third parties for marketing or advertising purposes.
 
 ## Data Retention
 
@@ -64,6 +71,13 @@ You have full control over your data:
 - **Delete all App data** at any time by uninstalling the App from your device
 - **Revoke Apple Health permissions** through iOS Settings at any time
 - **Contact us** to request deletion of your device identifier and credit data from our server
+
+## Apple Health Integration
+
+With your explicit permission, CutJournal AI can read and write data to Apple Health (such as weight and body fat percentage). This integration is managed entirely by iOS. Health data accessed through this integration remains on your device and is governed by Apple's privacy policies. **We do not have access to your Apple Health data.**
+
+You can grant or revoke Apple Health permissions at any time through **Settings > Health > Data Access & Devices** on your device.
+
 
 ## Children's Privacy
 

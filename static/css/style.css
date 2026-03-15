@@ -515,6 +515,44 @@ section h2 {
   color: var(--color-text);
 }
 
+/* --- Page Content Tables --- */
+.page-content .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 16px;
+}
+
+.page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+  font-size: inherit;
+}
+
+.page-content thead th {
+  background: var(--color-bg-alt);
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.page-content tbody td {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-light);
+  vertical-align: top;
+}
+
+/* Bold left column acts as row header */
+.page-content tbody td:first-child {
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .hero-content {
